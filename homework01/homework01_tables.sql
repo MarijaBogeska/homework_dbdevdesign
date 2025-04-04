@@ -56,5 +56,36 @@ achievementPoints INTEGER,
 achievementMaxPoints INTEGER,
 achievementDate DATE
 );
+-- INSERT DATA IN STUDENT
+INSERT INTO student (firstName, lastName, dateOfBirth, enrolledDate, gender, nationalIdNumber, studentCardNumber)
+VALUES 
+	('John', 'Doe', '2002-05-15', '2021-09-01', 'male', 123456789, 987654321);
+-- INSERT DATA IN TEACHER
+INSERT INTO teacher (firstName, lastName, dateOfBirth, academicRank, hireDate) 
+VALUES 
+('Alice', 'Johnson', '1980-04-25', 'Professor', '2010-08-15');
+-- INSERT DATA IN COURSE
+INSERT INTO course (name, credit, academicYear, semestar)
+VALUES 
+('Introduction to Programming', 6, '2024-09-01', 1),
+('Data Structures and Algorithms', 6, '2024-09-01', 3),
+('Database Systems', 5, '2025-02-01', 4),
+('Web Development', 5, '2025-02-01', 4),
+('Operating Systems', 6, '2024-09-01', 3),
+('Artificial Intelligence', 6, '2025-09-01', 5);
+-- INSERT DATA IN GRADE
+INSERT INTO grade (studentId, courseId, teacherId, grade, comment, createdDate)
+VALUES
+(1, 1, 1, 10, 'Excellent performance', '2025-01-15');
+-- INSERT DATA IN ACHIEVEMENT TYPE
+INSERT INTO achievementType (name, description, participationRate)
+VALUES
+('basic', 'Basic level achievement, shows initial understanding', 60),
+('proficient', 'Proficient level achievement, demonstrates solid skills', 80),
+('advanced', 'Advanced level achievement, shows exceptional performance', 95);
+-- INSERT DATA IN GRADE DEATILS
+INSERT INTO gradeDetails (gradeId, achievementTypeId, achievementPoints, achievementMaxPoints, achievementDate)
+VALUES
+(1, 3, 45, 50, '2025-01-20');
 -- READ DATA
 SELECT * FROM gradeDetails;
